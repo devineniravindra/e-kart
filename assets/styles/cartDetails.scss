@@ -1,0 +1,60 @@
+@import 'variables.scss';
+
+table {
+    width: 100%;    
+    border-collapse: collapse;
+    margin: 15px 0px;
+
+    thead, tfoot {
+        text-align: left;
+    }
+    th, td {
+        padding: 5px;
+    }
+
+    &.itemListTable {
+        border-bottom: 1px solid $grey-color;
+
+        thead {
+            border-top: 1px solid $grey-color;
+            border-bottom: 1px solid $grey-color;
+        }
+        .itemImg {
+            height: 40px;
+            width: 40px;
+        }
+
+        tr {    
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            td, th {    
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                width: 25%;
+
+                &:first-child {
+                    width: 50%;
+                }
+            }
+        }
+        .input {
+            display: flex;
+            flex-direction: row;
+
+            input {
+                width: 25px;
+            }
+        }
+    }
+
+    &.amountDetails {
+        border: 1px solid $grey-color;
+
+        tfoot {
+            background-color: $grey-light-color;
+        }
+    }
+}

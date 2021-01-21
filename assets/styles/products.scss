@@ -1,0 +1,91 @@
+@import 'variables.scss';
+
+#products {
+    .product {
+        height: 300px;
+        width: 250px;
+        border: 1px solid $grey-light-color;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .discountSection {
+            background-color: green;
+            position: absolute;
+            font-size: 12px;
+            top: 20px;
+            z-index: 1;
+            padding: 2px;
+        }
+
+        .imageSection {
+            padding: 20px 35px;
+
+            .imageContainer{
+                height: 180px;
+                width: 180px;
+                background-color: $grey-light-color;
+                display: flex;
+                align-items: center;
+                align-content: center;
+                position: relative;
+
+                img {
+                    height: 180px;
+                    width: 180px;
+                }
+            }
+        }
+
+        .infoSection {
+            flex-grow: 1;
+            padding: 5px;
+            background-color: $grey-light-color;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+
+            .info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                align-content: space-evenly;
+
+                * {
+                    flex-grow: 1;
+                }
+
+                .price {
+                    font-size: 16px;
+
+                    .actual {
+                        text-decoration: line-through;
+                    }
+
+                    .display {                        
+                        font-weight: 600;
+                    }
+                }
+
+                .button {
+                    display: flex;
+
+                    button {
+                        border: 1px solid #0a76b7;
+                        color: #0a76b7;
+                        border-radius: 5px;
+                        background-color: $grey-light-color;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
+    }
+}
