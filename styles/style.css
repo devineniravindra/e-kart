@@ -1,3 +1,5 @@
+/* Landscape tablets and medium desktops */
+/* Large desktops and laptops */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -35,6 +37,8 @@ table {
     table.amountDetails tfoot {
       background-color: #A9A9A9; }
 
+/* Landscape tablets and medium desktops */
+/* Large desktops and laptops */
 .header {
   border-top: 1px solid #808080;
   border-bottom: 1px solid #808080;
@@ -43,29 +47,65 @@ table {
   align-items: center; }
   .header * {
     flex-grow: 1; }
-  .header .itemDetails {
-    background-color: green;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 5px; }
+  .header .itemCount {
+    display: none; }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .header .itemCount {
+        display: block; } }
+    @media (min-width: 1200px) {
+      .header .itemCount {
+        display: block; } }
+    .header .itemCount .itemDetails {
+      background-color: green;
+      color: #ffffff;
+      padding: 5px 10px;
+      border-radius: 5px; }
+  .header .mobileCart {
+    position: relative; }
+    .header .mobileCart img {
+      width: 40px; }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      .header .mobileCart {
+        display: none; } }
+    @media (min-width: 1200px) {
+      .header .mobileCart {
+        display: none; } }
+    .header .mobileCart .totalItems {
+      background-color: green;
+      color: #ffffff;
+      border-radius: 50%;
+      padding: 7px;
+      position: absolute; }
 
+/* Landscape tablets and medium desktops */
+/* Large desktops and laptops */
+/* Landscape tablets and medium desktops */
+/* Large desktops and laptops */
 #products .product {
   height: 300px;
-  width: 250px;
+  width: 300px;
   border: 1px solid #A9A9A9;
   margin: 10px;
   display: flex;
   flex-direction: column;
   position: relative; }
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    #products .product {
+      width: 250px; } }
+  @media (min-width: 1200px) {
+    #products .product {
+      width: 250px; } }
   #products .product .discountSection {
     background-color: green;
     position: absolute;
-    font-size: 12px;
+    font-size: 15px;
+    color: #ffffff;
     top: 20px;
     z-index: 1;
-    padding: 2px; }
+    padding: 10px; }
   #products .product .imageSection {
-    padding: 20px 35px; }
+    padding: 20px 35px;
+    height: 100%; }
     #products .product .imageSection .imageContainer {
       height: 180px;
       width: 180px;
@@ -109,6 +149,8 @@ table {
           background-color: #A9A9A9;
           font-size: 14px; }
 
+/* Landscape tablets and medium desktops */
+/* Large desktops and laptops */
 body {
   background: #FFFFFF;
   display: flex;
@@ -116,17 +158,45 @@ body {
   color: #000000; }
   body .section-1 {
     display: flex;
-    flex-direction: row; }
+    flex-direction: column;
+    position: relative; }
+    @media (min-width: 992px) and (max-width: 1199.98px) {
+      body .section-1 {
+        display: flex;
+        flex-direction: row; } }
+    @media (min-width: 1200px) {
+      body .section-1 {
+        display: flex;
+        flex-direction: row; } }
     body .section-1 #products {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       padding: 10px;
-      width: 65%; }
+      width: 100vw; }
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        body .section-1 #products {
+          width: 65%; } }
+      @media (min-width: 1200px) {
+        body .section-1 #products {
+          width: 65%; } }
     body .section-1 #cartDetails {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: baseline;
       padding: 10px;
-      width: 35%; }
+      width: 335px;
+      height: 100%;
+      position: absolute;
+      right: -100%;
+      z-index: 5;
+      background: #ffffff; }
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        body .section-1 #cartDetails {
+          position: relative;
+          width: 35%; } }
+      @media (min-width: 1200px) {
+        body .section-1 #cartDetails {
+          position: relative;
+          width: 35%; } }

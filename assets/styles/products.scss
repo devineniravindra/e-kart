@@ -1,26 +1,36 @@
 @import 'variables.scss';
+@import 'mixins.scss';
 
 #products {
     .product {
         height: 300px;
-        width: 250px;
+        width: 300px;
         border: 1px solid $grey-light-color;
         margin: 10px;
         display: flex;
         flex-direction: column;
         position: relative;
 
+        @include desktop {
+            width: 250px;
+        }
+        @include large-desktop {
+            width: 250px;
+        }
+
         .discountSection {
             background-color: green;
             position: absolute;
-            font-size: 12px;
+            font-size: 15px;
+            color: #ffffff;
             top: 20px;
             z-index: 1;
-            padding: 2px;
+            padding: 10px;
         }
 
         .imageSection {
             padding: 20px 35px;
+            height: 100%;
 
             .imageContainer{
                 height: 180px;

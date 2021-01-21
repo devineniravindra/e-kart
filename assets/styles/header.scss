@@ -1,4 +1,5 @@
 @import 'variables.scss';
+@import 'mixins.scss';
 
 .header {
     border-top: 1px solid $grey-color;
@@ -11,10 +12,43 @@
         flex-grow: 1;
     }
 
-    .itemDetails {
-        background-color: green;
-        color: #ffffff;
-        padding: 5px 10px;
-        border-radius: 5px;
+    .itemCount {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+        @include large-desktop {
+            display: block;
+        }
+
+        .itemDetails {
+            background-color: green;
+            color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    }
+
+    .mobileCart {  
+        position: relative;
+         
+        img {
+            width: 40px;
+        }     
+
+        @include desktop {
+            display: none;
+        }
+        @include large-desktop {
+            display: none;
+        }
+
+        .totalItems {
+            background-color: green;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 7px;
+            position: absolute;
+        }
     }
 }

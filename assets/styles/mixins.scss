@@ -1,0 +1,9 @@
+/* Landscape tablets and medium desktops */
+@mixin desktop {
+    @media (min-width: 992px) and (max-width: 1199.98px) { @content; }
+}
+  
+/* Large desktops and laptops */
+@mixin large-desktop {
+    @media (min-width: 1200px) { @content; }
+}

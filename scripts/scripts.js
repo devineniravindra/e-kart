@@ -154,7 +154,7 @@ var Header = /*#__PURE__*/function () {
   _createClass(Header, [{
     key: "render",
     value: function render() {
-      return "\n    \t<div class=\"header\">\n      \t<div>\n      \t\t<h2>All items</h2>\n         </div>\n         <div>\n         \t<span class=\"itemDetails\"><span class=\"totalItems\">0</span> items added to cart</span>\n         </div>\n      </div>\n    ";
+      return "\n    \t<div class=\"header\">\n      \t<div class=\"\">\n      \t\t<h2>All items</h2>\n         </div>\n         <div class=\"itemCount\">\n         \t<span class=\"itemDetails\"><span class=\"totalItems\">0</span> items added to cart</span>\n\t\t </div>\n\t\t <div class=\"mobileCart\" onclick=\"toggleCartDetails()\">\n\t\t \t<img src=\"assets/cartIcon.png\" alt=\"Cart Icon\" /> <span class=\"totalItems\">0</span>\n\t\t </div>\n      </div>\n    ";
     }
   }]);
 
@@ -163,6 +163,19 @@ var Header = /*#__PURE__*/function () {
 
 var headerComponent = new Header();
 document.querySelector('#header').innerHTML = headerComponent.render();
+
+var toggleCartDetails = function toggleCartDetails() {
+  var element = document.getElementById('cartDetails');
+  var opened = element.classList.contains("opened");
+
+  if (opened) {
+    element.style.right = "-100%";
+    element.classList.remove('opened');
+  } else {
+    element.style.right = 0;
+    element.classList.add('opened');
+  }
+};
 "use strict";
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

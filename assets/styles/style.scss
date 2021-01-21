@@ -1,21 +1,39 @@
 @import 'variables.scss';
+@import 'mixins.scss';
 
 body {
     background: $bodyBackground;
     display: flex;
     flex-direction: column;
     color: $font-color;
-    
+        
     .section-1 {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        position: relative;
+
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+        @include large-desktop {
+            display: flex;
+            flex-direction: row;
+        }
 
         #products {
             display: flex;
             flex-wrap: wrap;
             align-items: baseline;
             padding: 10px;
-            width: 65%;
+            width: 100vw;
+
+            @include desktop {
+                width: 65%;
+            }
+            @include large-desktop {
+                width: 65%;
+            }
         }
 
         #cartDetails {
@@ -24,7 +42,21 @@ body {
             flex-wrap: wrap;
             align-items: baseline;
             padding: 10px;
-            width: 35%;
+            width: 335px;
+            height: 100%;
+            position: absolute;
+            right: -100%;
+            z-index: 5;
+            background: #ffffff;
+            
+            @include desktop {
+                position: relative;
+                width: 35%;
+            }
+            @include large-desktop {
+                position: relative;
+                width: 35%;
+            }
         }
     }
 }
